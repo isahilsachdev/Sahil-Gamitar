@@ -38,14 +38,6 @@ let todos = [
         endDate: "2024-02-20",
         priority: "Medium",
         status: "Doing"
-    },
-    {
-        id: 3,
-        title: "Call mom",
-        description: "Wish mom a happy birthday.",
-        endDate: "2024-03-01",
-        priority: "Low",
-        status: "Done"
     }
 ];
 // Add a global variable to track edit mode
@@ -53,6 +45,16 @@ let isEditMode = false;
 let selectedId = null;
 let prioritySortOrder = 'desc'; // Initial sorting order for priority
 let endDateSortOrder = 'asc'; // Initial sorting order for end date
+
+// Function to render no data message
+function renderNoDataMessage(listElement, noDataMsgElement) {
+    if (!noDataMsgElement) return;
+    if (listElement.children.length === 0) {
+        noDataMsgElement.style.display = 'block';
+    } else {
+        noDataMsgElement.style.display = 'none';
+    }
+}
 
 // Function to render the ToDo list
 function renderTodos() {
@@ -93,6 +95,11 @@ function renderTodos() {
         } else if (todo.status === 'Done') {
             doneList.appendChild(todoItem);
         }
+
+        // Render no data messages
+        renderNoDataMessage(todoList, document.querySelector('.no-data-msg-todo'));
+        renderNoDataMessage(doingList, document.querySelector('.no-data-msg-doing'));
+        renderNoDataMessage(doneList, document.querySelector('.no-data-msg-done'));
     });
 }
 
