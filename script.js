@@ -1,3 +1,4 @@
+// sample data
 let todos = [
     {
         id: 1,
@@ -40,11 +41,11 @@ let todos = [
         status: "Doing"
     }
 ];
-// Add a global variable to track edit mode
+
 let isEditMode = false;
 let selectedId = null;
-let prioritySortOrder = 'desc'; // Initial sorting order for priority
-let endDateSortOrder = 'asc'; // Initial sorting order for end date
+let prioritySortOrder = 'desc';
+let endDateSortOrder = 'asc';
 
 // Function to render no data message
 function renderNoDataMessage(listElement, noDataMsgElement) {
@@ -105,17 +106,14 @@ function renderTodos() {
 
 // Function to edit a ToDo item
 function editTodo(id) {
-    // Get the ToDo item to edit
     const todo = todos.find(todo => todo.id === id);
     selectedId = id;
-    // Populate form fields with ToDo data
     document.getElementById('title').value = todo.title;
     document.getElementById('description').value = todo.description;
     document.getElementById('endDate').value = todo.endDate;
     document.getElementById('priority').value = todo.priority;
     document.getElementById('status').value = todo.status;
 
-    // Show save and cancel buttons
     document.getElementById('saveButton').style.display = 'inline-block';
     document.getElementById('cancelButton').style.display = 'inline-block';
     document.getElementById('statusGroup').style.display = 'block';
@@ -166,7 +164,6 @@ function saveTodo() {
 
 // Function to handle adding a new ToDo item
 function addTodo() {
-    // Get form values
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
     const endDate = document.getElementById('endDate').value;
@@ -178,7 +175,6 @@ function addTodo() {
         return;
     }
 
-    // Add new ToDo item
     const newId = todos.length > 0 ? todos[todos.length - 1].id + 1 : 1; // Generate new id
     const newTodo = {
         id: newId,
@@ -190,10 +186,8 @@ function addTodo() {
     };
     todos.push(newTodo);
 
-    // Re-render the ToDo list
     renderTodos();
 
-    // Reset form
     document.getElementById('todoForm').reset();
 }
 
@@ -205,10 +199,8 @@ document.getElementById('cancelButton').addEventListener('click', addTodo);
 
 // Function to delete a ToDo item
 function deleteTodo(id) {
-    // Filter out the ToDo item to be deleted
     todos = todos.filter(todo => todo.id !== id);
 
-    // Re-render the ToDo list
     renderTodos();
 }
 
@@ -223,7 +215,6 @@ function sortByPriority() {
         return orderMultiplier * (priorityOrder[b.priority] - priorityOrder[a.priority]);
     });
     renderTodos();
-    // Toggle sorting order for priority
     prioritySortOrder = prioritySortOrder === 'asc' ? 'desc' : 'asc';
 }
 
@@ -234,7 +225,6 @@ function sortByEndDate() {
         return orderMultiplier * (new Date(a.endDate) - new Date(b.endDate));
     });
     renderTodos();
-    // Toggle sorting order for end date
     endDateSortOrder = endDateSortOrder === 'asc' ? 'desc' : 'asc';
 }
 
@@ -247,17 +237,9 @@ document.getElementById('sortByEndDate').addEventListener('click', sortByEndDate
 document.getElementById('cancelButton').addEventListener('click', function() {
     // Reset form
     document.getElementById('todoForm').reset();
-
-    // Reset form title and button text
     document.getElementById('formTitle').textContent = 'Add New ToDo';
     document.getElementById('submitButton').textContent = 'Add';
-
-    // Hide cancel button
     document.getElementById('cancelButton').style.display = 'none';
-
-    // Hide status dropdown
     document.getElementById('statusGroup').style.display = 'none';
-
-    // Remove event listener from form
     document.getElementById('todoForm').removeEventListener('submit', saveEdit);
 });
