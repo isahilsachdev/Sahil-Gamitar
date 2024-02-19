@@ -154,12 +154,13 @@ function saveTodo() {
 
     // Reset form
     document.getElementById('todoForm').reset();
-
+    
     // Reset form title and button text
     document.getElementById('formTitle').textContent = 'Add New ToDo';
     document.getElementById('saveButton').style.display = 'none';
     document.getElementById('cancelButton').style.display = 'none';
     document.getElementById('addButton').style.display = 'inline-block';
+    document.getElementById('statusGroup').style.display = 'none';
 }
 
 // Function to handle adding a new ToDo item
@@ -194,8 +195,6 @@ function addTodo() {
 // Attach event listeners to buttons
 document.getElementById('addButton').addEventListener('click', addTodo);
 document.getElementById('saveButton').addEventListener('click', saveTodo);
-document.getElementById('cancelButton').addEventListener('click', addTodo);
-
 
 // Function to delete a ToDo item
 function deleteTodo(id) {
