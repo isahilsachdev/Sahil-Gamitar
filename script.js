@@ -13,7 +13,7 @@ let todos = [
         title: "Complete assignment 2",
         description: "Finish the ToDo application assignment for Gamitar.",
         endDate: "2024-02-23",
-        priority: "High",
+        priority: "Medium",
         status: "ToDo"
     },
     {
@@ -22,14 +22,6 @@ let todos = [
         description: "Finish the ToDo application assignment for Gamitar.",
         endDate: "2024-02-22",
         priority: "Low",
-        status: "ToDo"
-    },
-    {
-        id: 7,
-        title: "Complete assignment  4",
-        description: "Finish the ToDo application assignment for Gamitar.",
-        endDate: "2024-02-21",
-        priority: "Medium",
         status: "ToDo"
     },
     {
