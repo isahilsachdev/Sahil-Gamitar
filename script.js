@@ -1,5 +1,53 @@
-let todos = [];
-
+let todos = [
+    {
+        id: 1,
+        title: "Complete assignment 1",
+        description: "Finish the ToDo application assignment for Gamitar.",
+        endDate: "2024-02-25",
+        priority: "High",
+        status: "ToDo"
+    },
+    {
+        id: 5,
+        title: "Complete assignment 2",
+        description: "Finish the ToDo application assignment for Gamitar.",
+        endDate: "2024-02-23",
+        priority: "High",
+        status: "ToDo"
+    },
+    {
+        id: 6,
+        title: "Complete assignment  3 ",
+        description: "Finish the ToDo application assignment for Gamitar.",
+        endDate: "2024-02-22",
+        priority: "Low",
+        status: "ToDo"
+    },
+    {
+        id: 7,
+        title: "Complete assignment  4",
+        description: "Finish the ToDo application assignment for Gamitar.",
+        endDate: "2024-02-21",
+        priority: "Medium",
+        status: "ToDo"
+    },
+    {
+        id: 2,
+        title: "Buy groceries",
+        description: "Buy milk, eggs, and bread.",
+        endDate: "2024-02-20",
+        priority: "Medium",
+        status: "Doing"
+    },
+    {
+        id: 3,
+        title: "Call mom",
+        description: "Wish mom a happy birthday.",
+        endDate: "2024-03-01",
+        priority: "Low",
+        status: "Done"
+    }
+];
 // Add a global variable to track edit mode
 let isEditMode = false;
 let selectedId = null;
