@@ -99,5 +99,9 @@ button {
     .card-lists-box {
       flex-direction: column;
     }
+
+    .filter-header {
+        flex-direction: column;
+    }
   }
   
