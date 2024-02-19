@@ -42,7 +42,8 @@ let endDateSortOrder = 'asc';
 // Function to render no data message
 function renderNoDataMessage(listElement, noDataMsgElement) {
     if (!noDataMsgElement) return;
-    if (listElement.children.length === 0) {
+    const isElement = todos.find(todo => todo.status === listElement);
+    if (!isElement) {
         noDataMsgElement.style.display = 'block';
     } else {
         noDataMsgElement.style.display = 'none';
@@ -58,6 +59,11 @@ function renderTodos() {
     todoList.innerHTML = '';
     doingList.innerHTML = '';
     doneList.innerHTML = '';
+
+    // Render no data messages
+    renderNoDataMessage("ToDo", document.querySelector('.no-data-msg-todo'));
+    renderNoDataMessage("Doing", document.querySelector('.no-data-msg-doing'));
+    renderNoDataMessage("Done", document.querySelector('.no-data-msg-done'));
 
     todos.reverse().forEach(todo => {
         const todoItem = document.createElement('div');
@@ -88,11 +94,6 @@ function renderTodos() {
         } else if (todo.status === 'Done') {
             doneList.appendChild(todoItem);
         }
-
-        // Render no data messages
-        renderNoDataMessage(todoList, document.querySelector('.no-data-msg-todo'));
-        renderNoDataMessage(doingList, document.querySelector('.no-data-msg-doing'));
-        renderNoDataMessage(doneList, document.querySelector('.no-data-msg-done'));
     });
 }
 
