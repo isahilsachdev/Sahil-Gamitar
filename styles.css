@@ -1,0 +1,88 @@
+body {
+    font-size: 14px; /* Smaller font size */
+    margin: 0;
+    background-color: currentColor;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    width: fit-content;
+}
+
+.container {
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.add-todo input, .add-todo button {
+    margin-bottom: 10px;
+}
+
+.todo-item button {
+    margin-right: 10px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: linear-gradient(to right, #232526, #414345);
+    margin-bottom: 24px;
+}
+
+.prism-bg {
+    color: white;
+    border-radius: 10px;
+}
+
+.todo-item .card-body {
+    background-color: linear-gradient(to right, #232526, #414345);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-body-inner {
+    background-color: linear-gradient(to right, #232526, #414345);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 5px;
+    padding: 15px;
+
+}
+
+.todo-item .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.todo-item .card-text {
+    margin-bottom: 10px;
+}
+
+.cart-list-container {
+    max-height: 230px;
+    overflow-y: auto;
+    background: linear-gradient(to right, #232526, #414345);
+}
+
+.card-lists-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* styles.css */
+
+#statusGroup {
+    display: none;
+}
