@@ -14,8 +14,10 @@
 <body>
 
 <div class="container">
-    <button type="button" class="btn btn-primary" id="sortByPriority">Sort by Priority</button>
-    <button type="button" class="btn btn-primary" id="sortByEndDate">Sort by End Date</button>
+    <div class="filter-header">
+        <button type="button" class="btn btn-white" id="sortByPriority">Sort by Priority</button>
+        <button type="button" class="btn btn-white" id="sortByEndDate">Sort by End Date</button>
+    </div>
     <div class="row mt-2">
         <div class="col-md-4">
             <div class="card prism-bg">
@@ -63,16 +65,19 @@
                 <div class="card-body card-lists-box">
                     <div class="col cart-list-container">
                         <h5>To Do</h5>
+                        <p class="no-data-msg-todo" style="display: none;">No data available</p>
                         <div class="todo-list" id="todoList" data-testid="todoList">
                         </div>
                     </div>
                     <div class="col cart-list-container">
                         <h5>Doing</h5>
+                        <p class="no-data-msg-doing" style="display: none;">No data available</p>
                         <div class="todo-list" id="doingList" data-testid="doingList">
                         </div>
                     </div>
                     <div class="col cart-list-container">
                         <h5>Done</h5>
+                        <p class="no-data-msg-done" style="display: none;">No data available</p>
                         <div class="todo-list" id="doneList" data-testid="doneList">
                         </div>
                     </div>
