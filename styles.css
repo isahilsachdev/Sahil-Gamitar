@@ -1,7 +1,7 @@
 body {
     font-size: 14px; /* Smaller font size */
     margin: 0;
-    background-color: currentColor;
+    background-color: floralwhite;
     padding: 0;
     font-family: Arial, sans-serif;
 }
@@ -11,7 +11,7 @@ button {
 }
 
 .container {
-    max-width: 70vw;
+    max-width: 98vw;
     margin: 0 auto;
     padding: 24px;
 }
@@ -39,6 +39,7 @@ button {
 .prism-bg {
     color: white;
     border-radius: 10px;
+    background-color: transparent !important;
 }
 
 .todo-item .card-body {
@@ -70,18 +71,14 @@ button {
 }
 
 .cart-list-container {
-    max-height: 230px;
+    max-height: 700px;
     overflow-y: auto;
-    background: linear-gradient(to right, #232526, #414345);
 }
 
 .card-lists-box {
     display: flex;
-    flex-direction: column;
     gap: 16px;
 }
-
-/* styles.css */
 
 #statusGroup {
     display: none;
