@@ -10,6 +10,13 @@ button {
     width: fit-content;
 }
 
+.filter-header {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
 .container {
     max-width: 98vw;
     margin: 0 auto;
@@ -83,3 +90,13 @@ button {
 #statusGroup {
     display: none;
 }
+
+
+/* media queries */
+
+@media (max-width: 640px) {
+    .card-lists-box {
+      flex-direction: column;
+    }
+  }
+  
