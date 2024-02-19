@@ -24,19 +24,19 @@
                     <form id="todoForm">
                         <div class="mb-3">
                             <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="title" placeholder="Enter title">
+                            <input type="text" class="form-control" id="title" placeholder="Enter title" data-testid="titleInput">
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" id="description" placeholder="Enter description"></textarea>
+                            <textarea class="form-control" id="description" placeholder="Enter description" data-testid="descriptionInput"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="endDate" class="form-label">End Date</label>
-                            <input type="date" class="form-control" id="endDate">
+                            <input type="date" class="form-control" id="endDate" data-testid="endDateInput">
                         </div>
                         <div class="mb-3">
                             <label for="priority" class="form-label">Priority</label>
-                            <select class="form-select" id="priority">
+                            <select class="form-select" id="priority" data-testid="prioritySelect">
                                 <option value="High">High</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Low">Low</option>
@@ -44,15 +44,15 @@
                         </div>
                         <div class="mb-3" id="statusGroup" style="display: none;">
                             <label for="status" class="form-label">Status</label>
-                            <select class="form-select" id="status">
+                            <select class="form-select" id="status" data-testid="statusSelect">
                                 <option value="ToDo">ToDo</option>
                                 <option value="Doing">Doing</option>
                                 <option value="Done">Done</option>
                             </select>
                         </div>
-                        <button type="button" class="btn btn-primary" id="addButton">Add</button>
-                        <button type="button" class="btn btn-primary" id="saveButton" style="display: none;">Save</button>
-                        <button type="button" class="btn btn-secondary" id="cancelButton" style="display: none;">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="addButton" data-testid="addButton">Add</button>
+                        <button type="button" class="btn btn-primary" id="saveButton" style="display: none;" data-testid="saveButton">Save</button>
+                        <button type="button" class="btn btn-secondary" id="cancelButton" style="display: none;" data-testid="cancelButton">Cancel</button>
                         
                     </form>
                 </div>
@@ -63,17 +63,17 @@
                 <div class="card-body card-lists-box">
                     <div class="col cart-list-container">
                         <h5>To Do</h5>
-                        <div class="todo-list" id="todoList">
+                        <div class="todo-list" id="todoList" data-testid="todoList">
                         </div>
                     </div>
                     <div class="col cart-list-container">
                         <h5>Doing</h5>
-                        <div class="todo-list" id="doingList">
+                        <div class="todo-list" id="doingList" data-testid="doingList">
                         </div>
                     </div>
                     <div class="col cart-list-container">
                         <h5>Done</h5>
-                        <div class="todo-list" id="doneList">
+                        <div class="todo-list" id="doneList" data-testid="doneList">
                         </div>
                     </div>
                 </div>
