@@ -106,6 +106,7 @@ function editTodo(id) {
     document.getElementById('priority').value = todo.priority;
     document.getElementById('status').value = todo.status;
 
+    document.getElementById('formTitle').textContent = 'Edit ToDo';
     document.getElementById('saveButton').style.display = 'inline-block';
     document.getElementById('cancelButton').style.display = 'inline-block';
     document.getElementById('statusGroup').style.display = 'block';
